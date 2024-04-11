@@ -1,0 +1,102 @@
+/* Sidebar styles */
+.sidebar {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+.sidebar label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.sidebar input[type="text"], .sidebar select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.sidebar button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.sidebar button:hover {
+    background-color: #0056b3;
+}
+
+/* Results side styles */
+.results {
+    padding: 20px;
+}
+
+.car-wrap {
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.car-wrap .img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.car-wrap .text {
+    padding: 20px;
+}
+
+.car-wrap h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.car-wrap .cat {
+    font-size: 14px;
+    color: #666;
+}
+
+.car-wrap .price {
+    font-size: 16px;
+    color: #333;
+    margin-top: 5px;
+}
+
+.car-wrap .btn {
+    font-size: 14px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.car-wrap .btn-primary {
+    background-color: #007bff;
+}
+
+.car-wrap .btn-secondary {
+    background-color: #6c757d;
+}
+
+.car-wrap .btn:hover {
+    opacity: 0.8;
+}
