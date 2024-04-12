@@ -12,6 +12,7 @@ $users = getAllUsers(); // Get all users
 $customers = getAllCustomers(); // Get all users
 $bookingHistory = getBookingHistory(); // Get all bookings
 
+
 // Count the number of bookings, brands, body types, cars, and users
 $bookingsCount = count($bookings);
 $brandsCount = count($brands);
@@ -200,9 +201,18 @@ function displayAllBookings()
 
 function getUserBookings($uid)
 {
-    global $bookings;
-    if ($bookings) {
-        foreach ($bookings as $booking) {
+
+    global $conn;
+    $sql = "SELECT bookings.*, user.fname as firstname, user.lname as lastname, status.sname as booking_status from bookings inner join user on bookings.customer_id = user.pid inner join status on bookings.booking_status_id = status.sid inner join car on bookings.vehicle_id = car.car_id where bookings.customer_id = user.pid and bookings.vehicle_id = car.car_id and bookings.customer_id = '$uid';";
+    $result = $conn->query($sql);
+    if (!$result) {
+        die("Query failed: " . mysqli_error($conn));
+    }
+
+    if (mysqli_num_rows($result) > 0) {
+        $MyBookings = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+        foreach ($MyBookings as $booking) {
             ?>
             <div class="card shadow mb-4">
                 <div class=" card-header bg-primary text-white">
@@ -230,7 +240,6 @@ function getUserBookings($uid)
         // No bookings found
         echo "No bookings found.";
     }
-
 }
 
 // Select Functions (Dropdowns)
@@ -323,18 +332,5 @@ function selectStatus()
 
 function getMyBookings($id)
 {
-    global $conn;
-    $sql = "SELECT bookings.*, user.fname as firstname, user.lname as lastname, status.sname as booking_status from bookings inner join user on bookings.customer_id = user.pid inner join status on bookings.booking_status_id = status.sid inner join car on bookings.vehicle_id = car.car_id where bookings.customer_id = user.pid and bookings.vehicle_id = car.car_id and bookings.customer_id = '$id';";
-    $result = $conn->query($sql);
-    if (!$result) {
-        die("Query failed: " . mysqli_error($conn));
-    }
 
-    if (mysqli_num_rows($result) > 0) {
-        $MyBookings = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-        return $MyBookings;
-    } else {
-        return [];
-    }
 }
