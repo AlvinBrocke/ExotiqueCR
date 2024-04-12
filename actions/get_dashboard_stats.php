@@ -106,7 +106,7 @@ function getAllUsers()
     global $conn;
     $sql = "SELECT user.*, role.rolename AS role
         FROM user
-        INNER JOIN Role ON user.rid = role.rid";
+        INNER JOIN role ON user.rid = role.rid";
 
     $result = $conn->query($sql);
     if (!$result) {
@@ -127,7 +127,7 @@ function getAllCustomers()
     global $conn;
     $sql = "SELECT user.*, role.rolename AS role
         FROM User
-        INNER JOIN Role ON user.rid = role.rid WHERE user.rid = 3";
+        INNER JOIN role ON user.rid = role.rid WHERE user.rid = 3";
 
     $result = $conn->query($sql);
     if (!$result) {
