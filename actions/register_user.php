@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
         // SQL to insert data into the database
-        $sql = "INSERT INTO User (rid, fname, lname, tel, email, passwd)
+        $sql = "INSERT INTO user (rid, fname, lname, tel, email, passwd)
                 VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
 
