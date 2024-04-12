@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
 
     // Prepare and execute query to retrieve user data
-    $query = "SELECT * FROM User WHERE email = '$email'";
+    $query = "SELECT * FROM user WHERE email = '$email'";
     $result = mysqli_query($conn, $query);
 
     // Check if query execution was successful
