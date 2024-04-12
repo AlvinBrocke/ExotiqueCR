@@ -60,7 +60,7 @@ function getAllBrands()
 function getAllBodyTypes()
 {
     global $conn;
-    $sql = "SELECT * FROM carType";
+    $sql = "SELECT * FROM cartype";
     $result = $conn->query($sql);
     if (!$result) {
         die("Query failed: " . mysqli_error($conn));
