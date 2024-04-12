@@ -110,7 +110,8 @@
             <div class="row mb-5">
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2"><a href="landingpage.php" class="logo">Exo<span>tique</span></a>
+                        <h2 class="ftco-heading-2"><a href="../view/landingpage.php"
+                                class="logo">Exo<span>tique</span></a>
                         </h2>
                         <p>Experience the
                             epitome of automotive excellence with us, and let us turn your ordinary moments into
