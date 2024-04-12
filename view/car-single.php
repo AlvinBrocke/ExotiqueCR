@@ -168,22 +168,6 @@ if (isset($_GET['car_id'])) {
 						<div class="media-body py-md-4">
 							<div class="d-flex mb-3 align-items-center">
 								<div class="icon d-flex align-items-center justify-content-center"><span
-										class="flaticon-backpack"></span></div>
-								<div class="text">
-									<h3 class="heading mb-0 pl-3">
-										Luggage
-										<span>4 Bags</span>
-									</h3>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md d-flex align-self-stretch ftco-animate">
-					<div class="media block-6 services">
-						<div class="media-body py-md-4">
-							<div class="d-flex mb-3 align-items-center">
-								<div class="icon d-flex align-items-center justify-content-center"><span
 										class="flaticon-diesel"></span></div>
 								<div class="text">
 									<h3 class="heading mb-0 pl-3">
