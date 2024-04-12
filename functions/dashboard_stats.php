@@ -321,3 +321,20 @@ function selectStatus()
 
 }
 
+function getMyBookings($id)
+{
+    global $conn;
+    $sql = "SELECT bookings.*, user.fname as firstname, user.lname as lastname, status.sname as booking_status from bookings inner join user on bookings.customer_id = user.pid inner join status on bookings.booking_status_id = status.sid inner join car on bookings.vehicle_id = car.car_id where bookings.customer_id = user.pid and bookings.vehicle_id = car.car_id and bookings.customer_id = '$id';";
+    $result = $conn->query($sql);
+    if (!$result) {
+        die("Query failed: " . mysqli_error($conn));
+    }
+
+    if (mysqli_num_rows($result) > 0) {
+        $MyBookings = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+        return $MyBookings;
+    } else {
+        return [];
+    }
+}
