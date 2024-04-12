@@ -3,13 +3,13 @@ session_start();
 include "connection.php";
 
 // Function to check if the user is logged in
-function isUserLoggedIn()
+function isuserLoggedIn()
 {
     return isset($_SESSION['user_id']);
 }
 
 // Function to check user role and redirect accordingly
-function checkUserRoleRedirect()
+function checkuserRoleRedirect()
 {
     // Check if the 'user_id' and 'role' session variables are set
     if (isset($_SESSION['user_id']) && isset($_SESSION['role_id'])) {
@@ -29,9 +29,9 @@ function checkUserRoleRedirect()
 
 function navBarElements()
 {
-    if (isUserLoggedIn()) {
+    if (isuserLoggedIn()) {
         global $conn;
-        $sql = "SELECT User.fname FROM User WHERE pid = " . $_SESSION['user_id'];
+        $sql = "SELECT user.fname FROM user WHERE pid = " . $_SESSION['user_id'];
         $result = $conn->query($sql);
         $user_name = $result->fetch_assoc()['fname'];
         echo '<li class="nav-item dropdown">';
