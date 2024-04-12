@@ -23,7 +23,7 @@ function getABrand($id)
     }
 }
 
-function getAcarType($id)
+function getAcartype($id)
 {
     global $conn;
 
@@ -71,7 +71,7 @@ function getAcar($id)
     $query = "SELECT car.*, make.make_name as make, cartype.car_type as cartype, cartype.Weekly_rate as weekly_rate, cartype.Daily_rate as daily_rate, transmission.tname as transmission, fuel.fuel_name as fueltype, status.sname as sname  
     FROM car
     INNER JOIN make ON car.make_id = make.make_id
-    INNER JOIN carType ON car.Type_id = carType.Type_id
+    INNER JOIN cartype ON car.Type_id = cartype.Type_id
     INNER JOIN transmission ON car.transmission_id = transmission.tid
     INNER JOIN fuel ON car.fuel_id = fuel.fuel_id
     INNER JOIN status ON car.status_id = status.sid
