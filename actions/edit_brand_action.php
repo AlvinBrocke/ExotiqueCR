@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $mid = $_POST['edit_brand_id'];
 
     // Update query
-    $update = "UPDATE MAKE SET Make_name = '$make_name' WHERE make_id = $mid";
+    $update = "UPDATE make SET Make_name = '$make_name' WHERE make_id = $mid";
 
     // Perform the update
     $result = mysqli_query($conn, $update);

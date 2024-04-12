@@ -7,7 +7,7 @@ if (isset($_GET['mid'])) {
     $make_id = $_GET['mid'];
 
     // Delete query using the id variable
-    $query = "DELETE FROM MAKE WHERE Make_id = $make_id";
+    $query = "DELETE FROM make WHERE Make_id = $make_id";
     $result = mysqli_query($conn, $query);
 
     // Execute the query using the connection

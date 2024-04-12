@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
 
         // Prepare and execute the SQL query to insert the chore into the database
-        $make_sql = "INSERT INTO MAKE (Make_name) VALUES (?)";
+        $make_sql = "INSERT INTO make (Make_name) VALUES (?)";
         $stmt = $conn->prepare($make_sql);
         $stmt->bind_param("s", $makeName);
 

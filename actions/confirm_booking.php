@@ -49,6 +49,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     header("Location: ../view/landingpage.php?error=Please select a booking to confirm");
     exit();
 }
-
-
-?>

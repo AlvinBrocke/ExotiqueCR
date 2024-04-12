@@ -7,7 +7,7 @@ if (isset($_GET['uid'])) {
     $user_id = $_GET['uid'];
 
     // Delete query using the id variable
-    $query = "DELETE FROM User WHERE pid = $user_id";
+    $query = "DELETE FROM user WHERE pid = $user_id";
     $result = mysqli_query($conn, $query);
 
     // Execute the query using the connection

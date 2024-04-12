@@ -7,7 +7,7 @@ if (isset($_GET['cid'])) {
     $cid = $_GET['cid'];
 
     // Delete query using the id variable
-    $query = "DELETE FROM Car WHERE car_id = $cid";
+    $query = "DELETE FROM car WHERE car_id = $cid";
     $result = mysqli_query($conn, $query);
 
     // Execute the query using the connection

@@ -7,7 +7,7 @@ if (isset($_GET['btid'])) {
     $btid = $_GET['btid'];
 
     // Delete query using the id variable
-    $query = "DELETE FROM CarType WHERE Type_id = $btid";
+    $query = "DELETE FROM cartype WHERE Type_id = $btid";
     $result = mysqli_query($conn, $query);
 
     // Execute the query using the connection
