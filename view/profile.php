@@ -12,7 +12,7 @@ if (IsUserLoggedIn()) {
 <html lang="en">
 
 <head>
-    <title>Carbook - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Profile | ExotiqueCR</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -77,16 +77,13 @@ if (IsUserLoggedIn()) {
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <h1 class="mt-5 mb-4">Profile Settings</h1>
-                <form action="#" class="bg-light p-5 contact-form" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label for="profile_picture">Profile Picture:</label>
-                        <input type="file" id="profile_picture" name="profile_picture" class="form-control-file">
-                        <small id="profile_picture_help" class="form-text text-muted">Select an image file for your
-                            profile picture.</small>
-                    </div>
+                <form method="post" action="../actions/update_profile_action.php" class="bg-light p-5 contact-form"
+                    enctype="multipart/form-data">
+
                     <div class="form-group">
                         <label for="name">First Name:</label>
-                        <input type="hidden" name="car_id" value="<?php echo $user['pid']; ?>">
+
+                        <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
                         <input type="text" name="firstname" class="form-control" value="<?php echo $user['fname']; ?>">
                     </div>
                     <div class="form-group">
@@ -105,25 +102,7 @@ if (IsUserLoggedIn()) {
                             value="<?php echo $user['tel']; ?>">
                     </div>
                     <div class="form-group">
-                        <label for="address">Address:</label>
-                        <input type="text" id="address" name="address" class="form-control"
-                            value="<?php echo $user['address']; ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" class="form-control"
-                            value="<?php echo $user['passwd']; ?>">
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Update Settings" class="btn btn-primary py-3 px-5">
-                    </div>
-                    <div class="form-group">
-                        <label for="confirm_password">Confirm Password:</label>
-                        <input type="password" id="confirm_password" name="confirm_password" class="form-control"
-                            placeholder="Confirm Your Password">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn-submit">Update Settings</button>
+                        <input type="submit" value="Update Profile" class="btn btn-primary py-3 px-5">
                     </div>
                 </form>
             </div>

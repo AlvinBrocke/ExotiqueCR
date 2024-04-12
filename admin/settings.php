@@ -157,7 +157,7 @@ $ret_user = getAUser($_SESSION['user_id']);
                         </div>
                     </form>
                 </div>
-                <div class="section">
+                <!-- <div class="section">
                     <h2>Change Password</h2>
                     <form action="change_password.php" method="post" class="form">
                         <div class="form-group">
@@ -176,7 +176,7 @@ $ret_user = getAUser($_SESSION['user_id']);
                         </div>
                         <button type="submit" class="btn">Change Password</button>
                     </form>
-                </div>
+                </div> -->
             </div>
 
             <!-- End of Profile settings content -->
