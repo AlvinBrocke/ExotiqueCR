@@ -228,7 +228,7 @@ include "../actions/get_a_statistic.php";
               the Little Blind Text should turn around and return to its own, safe country. A small river named Duden
               flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in
               which roasted parts of sentences fly into your mouth.</p>
-            <p><a href="#" class="btn btn-primary py-3 px-4">Search Vehicle</a></p>
+            <p><a href="car.php" class="btn btn-primary py-3 px-4">Search Vehicle</a></p>
           </div>
         </div>
       </div>
