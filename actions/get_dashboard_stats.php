@@ -5,7 +5,7 @@ include "../settings/connection.php";
 function getAllBookings()
 {
     global $conn;
-    $sql = "SELECT bookings.*, Car.Image as img, User.fname AS firstname, User.lname AS lastname, Status.sname as booking_status FROM bookings INNER JOIN User ON Bookings.customer_id = User.pid INNER JOIN Status ON Bookings.Booking_status_id = Status.sid INNER JOIN Car ON Bookings.vehicle_id = Car.Car_id WHERE Bookings.customer_id = User.pid AND Bookings.vehicle_id = Car.car_id;";
+    $sql = "SELECT bookings.*, car.image as img, user.fname as firstname, user.lname as lastname, status.sname as booking_status from bookings inner join user on bookings.customer_id = user.pid inner join status on bookings.booking_status_id = status.sid inner join car on bookings.vehicle_id = car.car_id where bookings.customer_id = user.pid and bookings.vehicle_id = car.car_id;";
     $result = $conn->query($sql);
     if (!$result) {
         die("Query failed: " . mysqli_error($conn));
@@ -23,7 +23,7 @@ function getAllBookings()
 function getAllBookingHistory()
 {
     global $conn;
-    $sql = "SELECT Bookings.*, User.fname AS firstname, User.lname AS lastname, Status.sname as booking_status FROM bookings INNER JOIN User ON Bookings.customer_id = User.pid INNER JOIN Status ON Bookings.Booking_status_id = Status.sid INNER JOIN Car ON Bookings.vehicle_id = Car.Car_id WHERE Bookings.customer_id = User.pid AND Bookings.vehicle_id = Car.car_id AND Bookings.booking_status_id = 2;";
+    $sql = "SELECT bookings.*, user.fname as firstname, user.lname as lastname, status.sname as booking_status from bookings inner join user on bookings.customer_id = user.pid inner join status on bookings.booking_status_id = status.sid inner join car on bookings.vehicle_id = car.car_id where bookings.customer_id = user.pid and bookings.vehicle_id = car.car_id and bookings.booking_status_id = 2;";
 
     $result = $conn->query($sql);
     if (!$result) {
@@ -42,7 +42,7 @@ function getAllBookingHistory()
 function getAllBrands()
 {
     global $conn;
-    $sql = "SELECT * FROM Make";
+    $sql = "SELECT * FROM make";
     $result = $conn->query($sql);
     if (!$result) {
         die("Query failed: " . mysqli_error($conn));
@@ -60,7 +60,7 @@ function getAllBrands()
 function getAllBodyTypes()
 {
     global $conn;
-    $sql = "SELECT * FROM CarType";
+    $sql = "SELECT * FROM carType";
     $result = $conn->query($sql);
     if (!$result) {
         die("Query failed: " . mysqli_error($conn));
@@ -78,14 +78,15 @@ function getAllBodyTypes()
 function getAllCars()
 {
     global $conn;
-    $sql = "SELECT Car.*, Make.Make_name as make, cartype.Car_type as cartype, cartype.Weekly_rate as weekly_rate, cartype.Daily_rate as daily_rate, transmission.tname as transmission, fuel.fuel_name as fueltype, Status.sname as sname  
-    FROM Car
-    INNER JOIN Make ON Car.Make_id = Make.Make_id
-    INNER JOIN CarType ON Car.Type_id = CarType.Type_id
-    INNER JOIN Transmission ON Car.Transmission_id = Transmission.tid
-    INNER JOIN Fuel ON Car.Fuel_id = Fuel.Fuel_id
-    INNER JOIN Status ON Car.Status_id = Status.sid ORDER BY Car.Car_id asc; 
+    $sql = "SELECT car.*, make.make_name as make, cartype.car_type as cartype, cartype.weekly_rate as weekly_rate, cartype.daily_rate as daily_rate, transmission.tname as transmission, fuel.fuel_name as fueltype, status.sname as sname  
+    from car
+    inner join make on car.make_id = make.make_id
+    inner join cartype on car.type_id = cartype.type_id
+    inner join transmission on car.transmission_id = transmission.tid
+    inner join fuel on car.fuel_id = fuel.fuel_id
+    inner join status on car.status_id = status.sid order by car.car_id ASC; 
     ";
+
     $result = $conn->query($sql);
     if (!$result) {
         die("Query failed: " . mysqli_error($conn));
@@ -103,9 +104,9 @@ function getAllCars()
 function getAllUsers()
 {
     global $conn;
-    $sql = "SELECT User.*, Role.rolename AS role
-        FROM User
-        INNER JOIN Role ON User.rid = Role.rid";
+    $sql = "SELECT user.*, role.rolename AS role
+        FROM user
+        INNER JOIN Role ON user.rid = role.rid";
 
     $result = $conn->query($sql);
     if (!$result) {
@@ -124,9 +125,9 @@ function getAllUsers()
 function getAllCustomers()
 {
     global $conn;
-    $sql = "SELECT User.*, Role.rolename AS role
+    $sql = "SELECT user.*, role.rolename AS role
         FROM User
-        INNER JOIN Role ON User.rid = Role.rid WHERE User.rid = 3";
+        INNER JOIN Role ON user.rid = role.rid WHERE user.rid = 3";
 
     $result = $conn->query($sql);
     if (!$result) {
@@ -163,7 +164,7 @@ function getAllTransmissions()
 function getMyBookings($id)
 {
     global $conn;
-    $sql = "SELECT bookings.*, User.fname AS firstname, User.lname AS lastname, Status.sname as booking_status FROM bookings INNER JOIN User ON Bookings.customer_id = User.pid INNER JOIN Status ON Bookings.Booking_status_id = Status.sid INNER JOIN Car ON Bookings.vehicle_id = Car.Car_id WHERE Bookings.customer_id = User.pid AND Bookings.vehicle_id = Car.car_id AND Bookings.customer_id = '$id';";
+    $sql = "SELECT bookings.*, user.fname as firstname, user.lname as lastname, status.sname as booking_status from bookings inner join user on bookings.customer_id = user.pid inner join status on bookings.booking_status_id = status.sid inner join car on bookings.vehicle_id = car.car_id where bookings.customer_id = user.pid and bookings.vehicle_id = car.car_id and bookings.customer_id = '$id';";
     $result = $conn->query($sql);
     if (!$result) {
         die("Query failed: " . mysqli_error($conn));
@@ -181,7 +182,7 @@ function getMyBookings($id)
 function getBookingHistory()
 {
     global $conn;
-    $sql = "SELECT bookings.*, User.fname AS firstname, User.lname AS lastname, Status.sname as booking_status FROM bookings INNER JOIN User ON Bookings.customer_id = User.pid INNER JOIN Status ON Bookings.Booking_status_id = Status.sid INNER JOIN Car ON Bookings.vehicle_id = Car.Car_id WHERE Bookings.customer_id = User.pid AND Bookings.vehicle_id = Car.car_id AND Bookings.booking_status_id = 1;";
+    $sql = "SELECT bookings.*, user.fname as firstname, user.lname as lastname, status.sname as booking_status from bookings inner join user on bookings.customer_id = user.pid inner join status on bookings.booking_status_id = status.sid inner join car on bookings.vehicle_id = car.car_id where bookings.customer_id = user.pid and bookings.vehicle_id = car.car_id and bookings.booking_status_id = 1;";
     $result = $conn->query($sql);
     if (!$result) {
         die("Query failed: " . mysqli_error($conn));
