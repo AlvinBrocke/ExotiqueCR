@@ -6,7 +6,7 @@ function getABrand($id)
     global $conn;
 
     // query to select one chore based on id
-    $query = "SELECT * FROM Make WHERE Make_id = '$id'";
+    $query = "SELECT * FROM make WHERE make_id = '$id'";
     $result = mysqli_query($conn, $query);
     $resultCheck = mysqli_num_rows($result);
 
@@ -20,7 +20,7 @@ function getABrand($id)
     }
 }
 
-function getACarType($id)
+function getAcarType($id)
 {
     global $conn;
 
@@ -39,14 +39,14 @@ function getACarType($id)
     }
 }
 
-function getAUser($id)
+function getAuser($id)
 {
     global $conn;
 
     // query to select one chore based on id
-    $query = "SELECT User.*, Role.rolename AS role
-    FROM User
-    INNER JOIN Role ON User.rid = Role.rid WHERE User.pid = '$id'";
+    $query = "SELECT user.*, role.rolename AS role
+    FROM user
+    INNER JOIN role ON user.rid = role.rid WHERE user.pid = '$id'";
     $result = mysqli_query($conn, $query);
     $resultCheck = mysqli_num_rows($result);
 
@@ -60,19 +60,19 @@ function getAUser($id)
     }
 }
 
-function getACar($id)
+function getAcar($id)
 {
     global $conn;
 
     // query to select one car based on id
-    $query = "SELECT Car.*, Make.Make_name as make, cartype.Car_type as cartype, cartype.Weekly_rate as weekly_rate, cartype.Daily_rate as daily_rate, transmission.tname as transmission, fuel.fuel_name as fueltype, Status.sname as sname  
-    FROM Car
-    INNER JOIN Make ON Car.Make_id = Make.Make_id
-    INNER JOIN CarType ON Car.Type_id = CarType.Type_id
-    INNER JOIN Transmission ON Car.Transmission_id = Transmission.tid
-    INNER JOIN Fuel ON Car.Fuel_id = Fuel.Fuel_id
-    INNER JOIN Status ON Car.Status_id = Status.sid
-    WHERE Car_id = '$id'";
+    $query = "SELECT car.*, make.make_name as make, cartype.car_type as cartype, cartype.Weekly_rate as weekly_rate, cartype.Daily_rate as daily_rate, transmission.tname as transmission, fuel.fuel_name as fueltype, status.sname as sname  
+    FROM car
+    INNER JOIN make ON car.make_id = make.make_id
+    INNER JOIN carType ON car.Type_id = carType.Type_id
+    INNER JOIN transmission ON car.transmission_id = transmission.tid
+    INNER JOIN Fuel ON car.Fuel_id = Fuel.Fuel_id
+    INNER JOIN status ON car.status_id = status.sid
+    WHERE car_id = '$id'";
 
     $result = mysqli_query($conn, $query);
     $resultCheck = mysqli_num_rows($result);
@@ -95,7 +95,7 @@ function getABooking($id)
     global $conn;
 
     // query to select one booking based on id
-    $query = "SELECT * FROM Bookings WHERE Booking_id = '$id'";
+    $query = "SELECT * FROM bookings WHERE Booking_id = '$id'";
     $result = mysqli_query($conn, $query);
     $resultCheck = mysqli_num_rows($result);
 
