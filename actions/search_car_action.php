@@ -14,13 +14,13 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $capacity = isset($_GET['capacity']) ? $_GET['capacity'] : '';
 
     // Build your SQL query based on the form data
-    $sql = "SELECT car.*, make.make_name as make, cartype.car_type as cartype, cartype.Weekly_rate as weekly_rate, cartype.Daily_rate as daily_rate, transmission.tname as transmission, Fuel.fuel_name as fueltype, Status.sname as sname  
+    $sql = "SELECT car.*, make.make_name as make, cartype.car_type as cartype, cartype.Weekly_rate as weekly_rate, cartype.Daily_rate as daily_rate, transmission.tname as transmission, fuel.fuel_name as fueltype, status.sname as sname  
     FROM car
     INNER JOIN make ON car.make_id = make.make_id
     INNER JOIN cartype ON car.Type_id = cartype.Type_id
     INNER JOIN transmission ON car.transmission_id = transmission.tid
-    INNER JOIN Fuel ON car.Fuel_id = Fuel.Fuel_id
-    INNER JOIN Status ON car.Status_id = Status.sid WHERE 1=1";
+    INNER JOIN fuel ON car.fuel_id = fuel.fuel_id
+    INNER JOIN status ON car.status_id = status.sid WHERE 1=1";
 
     // Apply filters
     if (!empty($make)) {
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $sql .= " AND car.transmission_id = '$transmission'"; // Adjust column name as per your database
     }
     if (!empty($fueltype)) {
-        $sql .= " AND car.Fuel_id = '$fueltype'"; // Adjust column name as per your database
+        $sql .= " AND car.fuel_id = '$fueltype'"; // Adjust column name as per your database
     }
     if (!empty($capacity)) {
         $sql .= " AND Capacity = '$capacity'"; // Adjust column name as per your database
