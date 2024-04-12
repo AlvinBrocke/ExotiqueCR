@@ -73,7 +73,7 @@ function getAcar($id)
     INNER JOIN make ON car.make_id = make.make_id
     INNER JOIN carType ON car.Type_id = carType.Type_id
     INNER JOIN transmission ON car.transmission_id = transmission.tid
-    INNER JOIN Fuel ON car.Fuel_id = Fuel.Fuel_id
+    INNER JOIN fuel ON car.fuel_id = fuel.fuel_id
     INNER JOIN status ON car.status_id = status.sid
     WHERE car_id = '$id'";
 
