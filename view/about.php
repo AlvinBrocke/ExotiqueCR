@@ -97,7 +97,7 @@
               With Exotique Car Rentals, luxury isn't just a destination – it's the journey itself. Experience the
               epitome of automotive excellence with us, and let us turn your ordinary moments into extraordinary
               memories.</p>
-            <p><a href="../view/cars.php" class="btn btn-primary py-3 px-4">Search Vehicle</a></p>
+            <p><a href="../view/car.php" class="btn btn-primary py-3 px-4">Search Vehicle</a></p>
           </div>
         </div>
       </div>
