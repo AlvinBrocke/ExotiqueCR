@@ -41,7 +41,6 @@ function navBarElements()
         echo '<ul class="dropdown-menu">';
         if ($_SESSION['role_id'] == 1 || $_SESSION['role_id'] == 2) {
             echo '<li><a href="../admin/dashboard.php">Dashboard</a></li>';
-            echo '<li><a href="../admin/profile.php">Profile</a></li>';
             echo '<li><a href="../admin/settings.php">Settings</a></li>';
         } else {
             echo '<li><a href="my-bookings.php">My Bookings</a></li>';

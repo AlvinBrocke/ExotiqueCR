@@ -34,6 +34,7 @@ if (isset($_POST['submit']) && isset($_FILES['car_image'])) {
                 $img_upload_path = '../images/uploads/' . $new_img_name;
                 move_uploaded_file($carImageTemp, $img_upload_path);
 
+
                 //Form validations
                 if (empty($carRegNo) || empty($carMake) || empty($carModel) || empty($carYear) || empty($carType) || empty($carTransmission) || empty($carCapacity) || empty($carFuel) || empty($carDescription)) {
                     header('Location: ../admin/cars.php?msg=Please fill in all fields');
