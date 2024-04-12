@@ -101,7 +101,7 @@ function getAllCars()
     }
 }
 
-function getAllUsers()
+function getAllusers()
 {
     global $conn;
     $sql = "SELECT user.*, role.rolename AS role
@@ -114,9 +114,9 @@ function getAllUsers()
     }
 
     if (mysqli_num_rows($result) > 0) {
-        $AllUsers = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        $Allusers = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-        return $AllUsers;
+        return $Allusers;
     } else {
         return [];
     }
@@ -126,7 +126,7 @@ function getAllCustomers()
 {
     global $conn;
     $sql = "SELECT user.*, role.rolename AS role
-        FROM User
+        FROM user
         INNER JOIN role ON user.rid = role.rid WHERE user.rid = 3";
 
     $result = $conn->query($sql);
@@ -135,9 +135,9 @@ function getAllCustomers()
     }
 
     if (mysqli_num_rows($result) > 0) {
-        $AllUsers = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        $Allusers = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-        return $AllUsers;
+        return $Allusers;
     } else {
         return [];
     }
