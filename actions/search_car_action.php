@@ -14,29 +14,29 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $capacity = isset($_GET['capacity']) ? $_GET['capacity'] : '';
 
     // Build your SQL query based on the form data
-    $sql = "SELECT Car.*, Make.Make_name as make, CarType.Car_type as cartype, CarType.Weekly_rate as weekly_rate, CarType.Daily_rate as daily_rate, Transmission.tname as transmission, Fuel.fuel_name as fueltype, Status.sname as sname  
-    FROM Car
-    INNER JOIN Make ON Car.Make_id = Make.Make_id
-    INNER JOIN CarType ON Car.Type_id = CarType.Type_id
-    INNER JOIN Transmission ON Car.Transmission_id = Transmission.tid
-    INNER JOIN Fuel ON Car.Fuel_id = Fuel.Fuel_id
-    INNER JOIN Status ON Car.Status_id = Status.sid WHERE 1=1";
+    $sql = "SELECT car.*, Make.Make_name as make, carType.car_type as cartype, carType.Weekly_rate as weekly_rate, carType.Daily_rate as daily_rate, Transmission.tname as transmission, Fuel.fuel_name as fueltype, Status.sname as sname  
+    FROM car
+    INNER JOIN Make ON car.Make_id = Make.Make_id
+    INNER JOIN carType ON car.Type_id = carType.Type_id
+    INNER JOIN Transmission ON car.Transmission_id = Transmission.tid
+    INNER JOIN Fuel ON car.Fuel_id = Fuel.Fuel_id
+    INNER JOIN Status ON car.Status_id = Status.sid WHERE 1=1";
 
     // Apply filters
     if (!empty($make)) {
-        $sql .= " AND Car.Make_id = '$make'"; // Adjust column name as per your database
+        $sql .= " AND car.Make_id = '$make'"; // Adjust column name as per your database
     }
     if (!empty($year)) {
         $sql .= " AND `Year` = '$year'"; // Adjust column name as per your database
     }
     if (!empty($cartype)) {
-        $sql .= " AND Car.Type_id = '$cartype'"; // Adjust column name as per your database
+        $sql .= " AND car.Type_id = '$cartype'"; // Adjust column name as per your database
     }
     if (!empty($transmission)) {
-        $sql .= " AND Car.Transmission_id = '$transmission'"; // Adjust column name as per your database
+        $sql .= " AND car.Transmission_id = '$transmission'"; // Adjust column name as per your database
     }
     if (!empty($fueltype)) {
-        $sql .= " AND Car.Fuel_id = '$fueltype'"; // Adjust column name as per your database
+        $sql .= " AND car.Fuel_id = '$fueltype'"; // Adjust column name as per your database
     }
     if (!empty($capacity)) {
         $sql .= " AND Capacity = '$capacity'"; // Adjust column name as per your database
