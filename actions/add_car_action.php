@@ -14,6 +14,7 @@ if (isset($_POST['submit']) && isset($_FILES['car_image'])) {
     $carStatus = 0;
     $carDescription = $_POST['description'];
     $carFuel = $_POST['fuel_type'];
+    $carMileage = $_POST['mileage'];
     $carImageSize = $_FILES['car_image']['size'];
     $carImageTemp = $_FILES['car_image']['tmp_name'];
     $carImageName = $_FILES['car_image']['name'];
@@ -50,10 +51,10 @@ if (isset($_POST['submit']) && isset($_FILES['car_image'])) {
                 }
 
                 // Prepare and execute the SQL query to insert the car into the database
-                $car_sql = "INSERT INTO car (make_id, Model, `Year`, Type_id, Transmission_id, Capacity, Reg_no, `Status_id`, `Image`, fuel_id, `description`) 
-                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                $car_sql = "INSERT INTO car (make_id, Model, `Year`, Type_id, Transmission_id, Capacity, Reg_no, `Status_id`, `Image`, fuel_id, `description`m mileage) 
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 $stmt = $conn->prepare($car_sql);
-                $stmt->bind_param("isiiissssis", $carMake, $carModel, $carYear, $carType, $carTransmission, $carCapacity, $carRegNo, $carStatus, $new_img_name, $carFuel, $carDescription); // Image parameter is removed as it is handled separately
+                $stmt->bind_param("isiiissssisi", $carMake, $carModel, $carYear, $carType, $carTransmission, $carCapacity, $carRegNo, $carStatus, $new_img_name, $carFuel, $carDescription, $carMileage); // Image parameter is removed as it is handled separately
                 $result = $stmt->execute();
 
                 if ($result) {

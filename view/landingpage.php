@@ -39,7 +39,7 @@ include "../actions/get_a_statistic.php";
 
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-      <a class="navbar-brand" href="index.php">EXOTIQUE</a>
+      <a class="navbar-brand" href="index.php">EXO<span>TIQUE</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
         aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span> Menu
@@ -66,9 +66,9 @@ include "../actions/get_a_statistic.php";
       <div class="row no-gutters slider-text justify-content-start align-items-center justify-content-center">
         <div class="col-lg-8 ftco-animate">
           <div class="text w-100 text-center mb-md-5 pb-md-5">
-            <h1 class="mb-4">Fast &amp; Easy Way To Rent A Car</h1>
-            <p style="font-size: 18px;">A small river named Duden flows by their place and supplies it with the
-              necessary regelialia. It is a paradisematic country, in which roasted parts</p>
+            <h1 class="mb-4">Fast &amp; Easy Way To Rent A Luxury Car</h1>
+            <p style="font-size: 18px;">Experience the pinnacle of luxury driving with Exotique Car Rentals - where
+              every journey becomes an unforgettable adventure</p>
             <a href="https://vimeo.com/45830194"
               class="icon-wrap popup-vimeo d-flex align-items-center mt-4 justify-content-center">
               <div class="icon d-flex align-items-center justify-content-center">

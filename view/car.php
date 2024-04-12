@@ -7,7 +7,7 @@ include "../settings/core.php";
 <html lang="en">
 
 <head>
-	<title>Carbook - Free Bootstrap 4 Template by Colorlib</title>
+	<title>Car Listings | ExotiqueCR</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -41,7 +41,7 @@ include "../settings/core.php";
 
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.php">EXOTIQUE</a>
+			<a class="navbar-brand" href="index.php">EXO<span>TIQUE</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
 				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu

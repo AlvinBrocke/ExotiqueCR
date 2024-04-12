@@ -55,7 +55,7 @@ if (isset($_GET['car_id'])) {
 
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.php">EXOTIQUE</a>
+			<a class="navbar-brand" href="index.php">EXO<span>TIQUE</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
 				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
@@ -120,7 +120,7 @@ if (isset($_GET['car_id'])) {
 								<div class="text">
 									<h3 class="heading mb-0 pl-3">
 										Mileage
-										<span>40,000</span>
+										<span><?php echo $car['mileage'] ?></span>
 									</h3>
 								</div>
 							</div>
