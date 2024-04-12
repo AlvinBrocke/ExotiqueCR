@@ -13,7 +13,7 @@ if (isset($_POST['startDate']) && isset($_POST['endDate'])) {
     $booking_status = 2;
     $car_id = $_POST['car_id'];
 
-    $sql = "INSERT INTO bookings (customer_id, vehicle_id, `start_date`, return_date, booking_status_id, date_booked) VALUES (?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO bookings (customer_id, vehicle_id, `start_date`, return_date, booking_status_id, booking_date) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("iissis", $user_id, $car_id, $startDate, $endDate, $booking_status, $date_booked);
     $result = $stmt->execute();
