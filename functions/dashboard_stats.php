@@ -203,7 +203,7 @@ function getUserBookings($uid)
 {
 
     global $conn;
-    $sql = "SELECT bookings.*, user.fname as firstname, user.lname as lastname, status.sname as booking_status from bookings inner join user on bookings.customer_id = user.pid inner join status on bookings.booking_status_id = status.sid inner join car on bookings.vehicle_id = car.car_id where bookings.customer_id = user.pid and bookings.vehicle_id = car.car_id and bookings.customer_id = '$uid';";
+    $sql = "SELECT bookings.*, car.Image as img, user.fname as firstname, user.lname as lastname, status.sname as booking_status from bookings inner join user on bookings.customer_id = user.pid inner join status on bookings.booking_status_id = status.sid inner join car on bookings.vehicle_id = car.car_id where bookings.customer_id = user.pid and bookings.vehicle_id = car.car_id and bookings.customer_id = '$uid';";
     $result = $conn->query($sql);
     if (!$result) {
         die("Query failed: " . mysqli_error($conn));
