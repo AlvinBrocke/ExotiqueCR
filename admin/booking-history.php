@@ -147,7 +147,7 @@ checkUserRoleRedirect();
                         </thead>
                         <tbody>
                         <tbody>
-                            <?php displayAllBookingHistory(); ?>
+                            <?php displayAllBookingsHistory(); ?>
                         </tbody>
                         </tbody>
                     </table>

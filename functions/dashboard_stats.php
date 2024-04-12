@@ -8,6 +8,7 @@ $bodyTypes = getAllBodyTypes(); // Get all body types
 $cars = getAllCars();   // Get all cars
 $users = getAllUsers(); // Get all users
 $customers = getAllCustomers(); // Get all users
+$bookingHistory = getBookingHistory(); // Get all bookings
 
 // Count the number of bookings, brands, body types, cars, and users
 $bookingsCount = count($bookings);
@@ -151,6 +152,29 @@ function displayAllCars()
 }
 
 
+function displayAllBookingsHistory()
+{
+    global $bookingHistory;
+    if ($bookingHistory) {
+        foreach ($bookingHistory as $record) {
+            echo "<tr>";
+            echo "<td>" . $record['Booking_id'] . "</td>";
+            echo "<td>" . $record['firstname'] . " " . $record['lastname'] . "</td>";
+            echo "<td>" . $record['vehicle_id'] . "</td>";
+            echo "<td>" . $record['start_date'] . "</td>";
+            echo "<td>" . $record['return_date'] . "</td>";
+            echo "<td><span class='status pending'>" . $record['booking_status'] . "</span></td>";
+            echo "<td>";
+            // echo "<a href='../admin/edit_booking.php?bid=" . $record['Booking_id'] . "' class='btn-edit'><i class='bx bx-pencil'></i></a>";
+            echo "<a href='../actions/delete_booking_action.php?bid=" . $record['Booking_id'] . "' class='btn-delete'><i class='bx bx-trash'></i></a>";
+            echo "</td>";
+            echo "</tr>";
+        }
+    } else {
+        echo "<tr><td>No bookings found</td></tr>";
+    }
+}
+
 function displayAllBookings()
 {
     global $bookings;
@@ -163,29 +187,7 @@ function displayAllBookings()
             echo "<td>" . $booking['start_date'] . "</td>";
             echo "<td>" . $booking['return_date'] . "</td>";
             echo "<td><span class='status pending'>" . $booking['booking_status'] . "</span></td>";
-            echo "<td>";
-            echo "<a href='../admin/edit_booking.php?bid=" . $booking['Booking_id'] . "' class='btn-edit'><i class='bx bx-pencil'></i></a>";
-            echo "<a href='../actions/delete_booking_action.php?bid=" . $booking['Booking_id'] . "' class='btn-delete'><i class='bx bx-trash'></i></a>";
-            echo "</td>";
-            echo "</tr>";
-        }
-    } else {
-        echo "<tr><td>No bookings found</td></tr>";
-    }
-}
-
-function displayAllBookingHistory()
-{
-    global $bookings;
-    if ($bookings) {
-        foreach ($bookings as $booking) {
-            echo "<tr>";
-            echo "<td>" . $booking['Booking_id'] . "</td>";
-            echo "<td>" . $booking['firstname'] . " " . $booking['name'] . "</td>";
-            echo "<td>" . $booking['vehicle_id'] . "</td>";
-            echo "<td>" . $booking['start_date'] . "</td>";
-            echo "<td>" . $booking['return_date'] . "</td>";
-            echo "<td><span class='status pending'>" . $booking['booking_status'] . "</span></td>";
+            echo "<td><a href='../actions/delete_booking_action.php?bid=" . $booking['Booking_id'] . "' class='btn-delete'><i class='bx bx-trash'></i></a></td>";
             echo "</tr>";
         }
     } else {

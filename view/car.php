@@ -49,136 +49,27 @@ include "../settings/core.php";
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
+					<li class="nav-item "><a href="index.php" class="nav-link">Home</a></li>
 					<li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
-					<li class="nav-item"><a href="car.php" class="nav-link">Cars</a></li>
+					<li class="nav-item active"><a href="car.php" class="nav-link">Cars</a></li>
 					<li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
 					<?php navBarElements(); ?>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<!-- END nav -->
 
-	<!-- <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('../images/bg_3.jpg');"
-		data-stellar-background-ratio="0.5">
+	<section class="hero-wrap hero-wrap-2 js-fullheight"
+		style="background-image: url('../images/pexels-pixabay-164634.jpg');" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
 				<div class="col-md-9 ftco-animate pb-5">
-					<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home <i
-									class="ion-ios-arrow-forward"></i></a></span> <span>Cars <i
-								class="ion-ios-arrow-forward"></i></span></p>
-					<h1 class="mb-3 bread">Choose Your Car</h1>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="ftco-section bg-light">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3">
-					<form name="sortFilterForm" id="sortFilterForm" action="../view/car.php" method="GET">
-						<div class="sidebar">
-							<h3>Sort and Filter</h3>
-							<div>
-								<label for="sort">Sort Price By:</label>
-								<select id="sort" name="sort">
-									<option value="">Select Sort</option>
-									<option value="price_low">Price: Low to High</option>
-									<option value="price_high">Price: High to Low</option>
-								</select>
-							</div>
-							<div>
-								<label for="make">Make:</label>
-								<select id="make" name="make">
-									<option value="">Select Make</option>
-									<?php selectMake() ?>
-								</select>
-							</div>
-							<div>
-								<label for="year">Year:</label>
-								<input id="year" name="year" type="number" min=1900 max=<?php echo date('Y') ?>>
-							</div>
-
-							<div>
-								<label for="cartype">Car Type:</label>
-								<select id="cartype" name="cartype">
-									<option value="">Select Car Type</option>
-									<?php selectCarType() ?>
-								</select>
-							</div>
-							<div>
-								<label for="transmission">Transmission:</label>
-								<select id="transmission" name="transmission">
-									<option value="">Select Transmission</option>
-									<?php selectTransmission() ?>
-								</select>
-							</div>
-							<div>
-								<label for="fueltype">Fuel:</label>
-								<select id="fueltype" name="fueltype">
-									<option value="">Select Fuel Type</option>
-									<?php selectFuelType() ?>
-								</select>
-							</div>
-							<div>
-								<label for="capacity">Capacity:</label>
-								<select id="capacity" name="capacity">
-									<option value="">Select Capacity</option>
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="6">6</option>
-									<option value="8">8</option>
-									<option value="10">10</option>
-								</select>
-							</div>
-							<button type="submit">Apply Filters</button>
-						</div>
-					</form>
-				</div>
-			</div>
-
-			<div class="row">
-				<section class="ftco-section bg-light">
-					<div class="container">
-						<div class="row">
-							<?php //include "../actions/search_car_action.php"              ?>
-							<?php displayAllCars(); ?>
-						</div>
-					</div>
-				</section>
-			</div>
-			<div class="row mt-5">
-				<div class="col text-center">
-					<div class="block-27">
-						<ul>
-							<li><a href="#">&lt;</a></li>
-							<li class="active"><span>1</span></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-							<li><a href="#">&gt;</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</section> -->
-
-	<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('../images/bg_3.jpg');"
-		data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
-				<div class="col-md-9 ftco-animate pb-5">
-					<p class="breadcrumbs"><a href="index.php">Home <i class="ion-ios-arrow-forward"></i></a> <span>Cars
-							<i class="ion-ios-arrow-forward"></i></span></p>
+					<p class="breadcrumbs"><span class="mr-2"><a href="landingpage.php">Home <i
+									class="ion-ios-arrow-forward"></i></a></span>
+						<span>Cars
+							<i class="ion-ios-arrow-forward"></i></span>
+					</p>
 					<h1 class="mb-3 bread">Choose Your Car</h1>
 				</div>
 			</div>

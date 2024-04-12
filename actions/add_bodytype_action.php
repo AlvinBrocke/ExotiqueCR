@@ -10,6 +10,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $weeklyRate = $_POST['weekly_rate'];
     $dailyRate = $_POST['daily_rate'];
 
+    if (empty($vehicleType) || empty($weeklyRate) || empty($dailyRate)) {
+        header('Location: ../admin/bodytype.php?msg=Please fill in all fields');
+        exit;
+    }
+
+    if (!is_numeric($weeklyRate) || !is_numeric($dailyRate)) {
+        header('Location: ../admin/bodytype.php?msg=Please enter a valid rate');
+        exit;
+    }
+
+    if ($weeklyRate < 0 || $dailyRate < 0) {
+        header('Location: ../admin/bodytype.php?msg=Please enter a valid rate');
+        exit;
+    }
+
+    if (!is_string($vehicleType)) {
+        header('Location: ../admin/bodytype.php?msg=Please enter a valid vehicle type');
+        exit;
+    }
+
     // Prepare and execute the SQL query to insert the chore into the database
     $bodytype_sql = "INSERT INTO cartype (Weekly_rate, Daily_rate, Car_type) 
         VALUES (?, ?, ?)";

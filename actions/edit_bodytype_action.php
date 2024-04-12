@@ -6,10 +6,38 @@ include "../settings/connection.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $vehicleTypeName = mysqli_real_escape_string($conn, $_POST['bodytype_name']);
+    $vehicleTypeName = $_POST['bodytype_name'];
     $weeklyRate = $_POST['weekly_rate'];
     $dailyRate = $_POST['daily_rate'];
     $btid = $_POST['bodytype_id'];
+
+    //Validate the input
+    if (empty($vehicleTypeName)) {
+        header("Location: ../admin/bodytype.php?msg=Vehicle type name is required");
+        exit();
+    }
+
+    if (empty($weeklyRate)) {
+        header("Location: ../admin/bodytype.php?msg=Weekly rate is required");
+        exit();
+    }
+
+    if (empty($dailyRate)) {
+        header("Location: ../admin/bodytype.php?msg=Daily rate is required");
+        exit();
+    }
+
+    if (!is_numeric($weeklyRate)) {
+        header("Location: ../admin/bodytype.php?msg=Weekly rate must be a number");
+        exit();
+    }
+
+    if (!is_numeric($dailyRate)) {
+        header("Location: ../admin/bodytype.php?msg=Daily rate must be a number");
+        exit();
+    }
+
+
 
 
 

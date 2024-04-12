@@ -1,7 +1,6 @@
 <?php
 include "../settings/core.php";
 include "../functions/dashboard_stats.php";
-echo $_SESSION['user_id'];
 checkUserRoleRedirect();
 ?>
 
@@ -138,8 +137,8 @@ checkUserRoleRedirect();
                 <div class="order">
                     <div class="head">
                         <h3>Cars</h3>
-                        <i class='bx bx-search'></i>
-                        <i class='bx bx-filter'></i>
+                        <!-- <i class='bx bx-search'></i>
+                        <i class='bx bx-filter'></i> -->
                     </div>
                     <table>
                         <thead>

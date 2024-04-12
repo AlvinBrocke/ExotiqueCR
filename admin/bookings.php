@@ -134,8 +134,8 @@ checkUserRoleRedirect();
                 <div class="order">
                     <div class="head">
                         <h3>Bookings</h3>
-                        <i class='bx bx-search'></i>
-                        <i class='bx bx-filter'></i>
+                        <!-- <i class='bx bx-search'></i>
+                        <i class='bx bx-filter'></i> -->
                     </div>
                     <table>
                         <thead>

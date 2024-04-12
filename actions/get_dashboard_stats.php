@@ -178,5 +178,23 @@ function getMyBookings($id)
     }
 }
 
+function getBookingHistory()
+{
+    global $conn;
+    $sql = "SELECT bookings.*, User.fname AS firstname, User.lname AS lastname, Status.sname as booking_status FROM bookings INNER JOIN User ON Bookings.customer_id = User.pid INNER JOIN Status ON Bookings.Booking_status_id = Status.sid INNER JOIN Car ON Bookings.vehicle_id = Car.Car_id WHERE Bookings.customer_id = User.pid AND Bookings.vehicle_id = Car.car_id AND Bookings.booking_status_id = 1;";
+    $result = $conn->query($sql);
+    if (!$result) {
+        die("Query failed: " . mysqli_error($conn));
+    }
+
+    if (mysqli_num_rows($result) > 0) {
+        $BookingHistory = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+        return $BookingHistory;
+    } else {
+        return [];
+    }
+}
+
 
 

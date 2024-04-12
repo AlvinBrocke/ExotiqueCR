@@ -205,15 +205,6 @@ checkUserRoleRedirect();
                         <input type="number" id="mileage" name="mileage" required min="0" max="50000">
                         <p class="error-message" id="mileage-error">Please enter a valid mileage.</p>
                     </div>
-
-                    <div class="form-group" id="gps-group">
-                        <label for="gps">GPS:</label>
-                        <input type="radio" id="make1" name="gps" value="1">
-                        <label for="make1">Yes</label>
-                        <input type="radio" name="gps" value="false">
-                        <label for="make2">No</label>
-                        <!-- Add more radio buttons for other make options -->
-                    </div>
                     <div class="form-group" id="description-group">
                         <label for="description">Description:</label>
                         <textarea name="description" id="description" cols="30" rows="10" required></textarea>

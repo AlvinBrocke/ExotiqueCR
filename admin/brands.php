@@ -15,6 +15,7 @@ checkUserRoleRedirect();
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/popupforms.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 
 
     <title>Brands | Exotique</title>
@@ -138,8 +139,8 @@ checkUserRoleRedirect();
                     <div class="head">
                         <h3>Brands</h3>
                         <div class="icons">
-                            <i class='bx bx-search'></i>
-                            <i class='bx bx-filter'></i>
+                            <!-- <i class='bx bx-search'></i>
+                            <i class='bx bx-filter'></i> -->
                         </div>
                     </div>
                     <table class="brand-table">
@@ -161,10 +162,12 @@ checkUserRoleRedirect();
                 <div class="popup-form">
                     <h4 style="font-weight: bold;">Add Brand</h4>
                     <button class="close-btn" onclick="closeaddBrandForm()">x</button> <!-- Closing button -->
-                    <form action="../actions/add_brand_action.php" method="POST" enctype="multipart/form-data">
+                    <form action="../actions/add_brand_action.php" method="POST" enctype="multipart/form-data"
+                        onsubmit="return validateBrand()">
                         <div class="form-group">
                             <label for="brand_name">Brand Name:</label>
                             <input type="text" id="brand_name" name="brand_name" required>
+                            <p id="brand_name_error" class="error-message"></p>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn-submit">Add Brand</button>
@@ -179,6 +182,7 @@ checkUserRoleRedirect();
         </main>
     </section>
     <script src=" ../js/dashboard.js"></script>
+    <script src="../js/validations.js"></script>
 </body>
 
 </html>

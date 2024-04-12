@@ -214,20 +214,29 @@ include "../actions/get_a_statistic.php";
     <div class="container">
       <div class="row no-gutters">
         <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center"
-          style="background-image: url(../images/about.jpg);">
+          style="background-image: url(../images/pexels-brady-knoll-3221165.jpg);">
         </div>
         <div class="col-md-6 wrap-about ftco-animate">
           <div class="heading-section heading-section-white pl-md-5">
             <span class="subheading">About us</span>
             <h2 class="mb-4">Welcome to Exotique Car Rentals</h2>
 
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
-              paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-            <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have
-              been rewritten a thousand times and everything that was left from its origin would be the word "and" and
-              the Little Blind Text should turn around and return to its own, safe country. A small river named Duden
-              flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in
-              which roasted parts of sentences fly into your mouth.</p>
+            <p>
+
+              Welcome to Exotique Car Rentals, where luxury meets unparalleled service. At Exotique, we believe that
+              every journey deserves to be exceptional, every drive a masterpiece.
+
+              We specialize in offering a fleet of the world's most coveted luxury
+              vehicles, meticulously curated to elevate your driving experience to new heights. Whether it's a sleek
+              convertible for a weekend escape, a powerful sports car for a special occasion, or a prestigious sedan for
+              your business endeavors, we have the perfect vehicle to match your discerning taste and lifestyle.
+
+            </p>
+            <p>
+
+              With Exotique Car Rentals, luxury isn't just a destination – it's the journey itself. Experience the
+              epitome of automotive excellence with us, and let us turn your ordinary moments into extraordinary
+              memories.</p>
             <p><a href="car.php" class="btn btn-primary py-3 px-4">Search Vehicle</a></p>
           </div>
         </div>

@@ -44,8 +44,8 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
+          <li class="nav-item "><a href="index.php" class="nav-link">Home</a></li>
+          <li class="nav-item active"><a href="about.php" class="nav-link">About</a></li>
           <li class="nav-item"><a href="car.php" class="nav-link">Cars</a></li>
           <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
           <?php navBarElements(); ?>
@@ -55,8 +55,8 @@
   </nav>
   <!-- END nav -->
 
-  <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('../images/bg_3.jpg');"
-    data-stellar-background-ratio="0.5">
+  <section class="hero-wrap hero-wrap-2 js-fullheight"
+    style="background-image: url('../images/pexels-pixabay-315938.jpg');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
       <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
@@ -74,7 +74,7 @@
     <div class="container">
       <div class="row no-gutters">
         <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center"
-          style="background-image: url(../images/about.jpg);">
+          style="background-image: url(../images/pexels-matheus-bertelli-799443.jpg);">
         </div>
         <div class="col-md-6 wrap-about ftco-animate">
           <div class="heading-section heading-section-white pl-md-5">
@@ -104,7 +104,7 @@
       <div class="row mb-5">
         <div class="col-md">
           <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2"><a href="#" class="logo">Car<span>book</span></a></h2>
+            <h2 class="ftco-heading-2"><a href="landingpage.php" class="logo">EXOTIQUE</a></h2>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
               blind texts.</p>
             <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">

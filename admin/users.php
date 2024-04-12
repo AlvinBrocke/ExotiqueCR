@@ -52,7 +52,7 @@ checkUserRoleRedirect();
                 </a>
             </li>
             <li>
-                <a href="user.php">
+                <a href="bodytype.php">
                     <i class='bx bxs-car-mechanic'></i>
                     <span class="text">Vehicle Type</span>
                 </a>
@@ -142,8 +142,8 @@ checkUserRoleRedirect();
                 <div class="order">
                     <div class="head">
                         <h3>Users</h3>
-                        <i class='bx bx-search'></i>
-                        <i class='bx bx-filter'></i>
+                        <!-- <i class='bx bx-search'></i>
+                        <i class='bx bx-filter'></i> -->
                     </div>
                     <table>
                         <thead>

@@ -134,8 +134,8 @@ checkUserRoleRedirect();
                 <div class="order">
                     <div class="head">
                         <h3>Body Type</h3>
-                        <i class='bx bx-search'></i>
-                        <i class='bx bx-filter'></i>
+                        <!-- <i class='bx bx-search'></i>
+                        <i class='bx bx-filter'></i> -->
                     </div>
                     <table>
                         <thead>
@@ -157,18 +157,22 @@ checkUserRoleRedirect();
                 <div class="popup-form">
                     <h4 style="font-weight: bold;">Add Vehicle Type</h4>
                     <button class="close-btn" onclick="closeaddBodyTypeForm()">x</button>
-                    <form action="../actions/add_bodytype_action.php" method="POST" enctype="multipart/form-data">
+                    <form action="../actions/add_bodytype_action.php" method="POST" enctype="multipart/form-data"
+                        onsubmit="return validateBodyType()">
                         <div class="form-group">
                             <label for="bodytype_name">Vehicle Type:</label>
                             <input type="text" id="bodytype_name" name="bodytype_name" required>
+                            <p id="bodytype_name_error" class="error-message">Invalid Body Type</p>
                         </div>
                         <div class="form-group">
                             <label for="daily_rate">Daily Rate:</label>
                             <input type="text" id="daily_rate" name="daily_rate">
+                            <p id="daily_rate_error" class="error-message">Invalid Daily rate</p>
                         </div>
                         <div class="form-group">
                             <label for="weekly_rate">Weekly Rate:</label>
                             <input type="text" id="weekly_rate" name="weekly_rate">
+                            <p id="weekly_rate_error" class="error-message">Invalid Weekly rate</p>
                         </div>
 
                         <div class="form-group">
@@ -184,6 +188,7 @@ checkUserRoleRedirect();
 
 
     <script src=" ../js/dashboard.js"></script>
+    <script src="../js/validations.js"></script>
 </body>
 
 </html>

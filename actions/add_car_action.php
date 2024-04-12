@@ -20,9 +20,8 @@ if (isset($_POST['submit']) && isset($_FILES['car_image'])) {
     $error = $_FILES['car_image']['error'];
 
     if ($error === 0) {
-        if ($carImageSize > 1000000) {
-            $em = "Your file size is too large";
-            header('Location: ../admin/cars.php?error=$em');
+        if ($carImageSize > 5000000) {
+            header('Location: ../admin/cars.php?error=File must be less than 5MB');
         } else {
             $img_ex = pathinfo($carImageName, PATHINFO_EXTENSION);
             $img_ex_lc = strtolower($img_ex);
@@ -33,6 +32,22 @@ if (isset($_POST['submit']) && isset($_FILES['car_image'])) {
                 $new_img_name = uniqid("IMG-", true) . '.' . $img_ex_lc;
                 $img_upload_path = '../images/uploads/' . $new_img_name;
                 move_uploaded_file($carImageTemp, $img_upload_path);
+
+                //Form validations
+                if (empty($carRegNo) || empty($carMake) || empty($carModel) || empty($carYear) || empty($carType) || empty($carTransmission) || empty($carCapacity) || empty($carFuel) || empty($carDescription)) {
+                    header('Location: ../admin/cars.php?msg=Please fill in all fields');
+                    exit;
+                }
+
+                if (!is_string($carRegNo) || !is_string($carModel) || !is_string($carDescription)) {
+                    header('Location: ../admin/cars.php?msg=Please enter a valid input');
+                    exit;
+                }
+
+                if (!is_numeric($carCapacity)) {
+                    header('Location: ../admin/cars.php?msg=Please enter a car capacity');
+                    exit;
+                }
 
                 // Prepare and execute the SQL query to insert the car into the database
                 $car_sql = "INSERT INTO car (make_id, Model, `Year`, Type_id, Transmission_id, Capacity, Reg_no, `Status_id`, `Image`, fuel_id, `description`) 
@@ -50,15 +65,14 @@ if (isset($_POST['submit']) && isset($_FILES['car_image'])) {
                     exit;
                 }
             } else {
-                $em = "You can't upload files of this type";
-                header("Location: ../admin/cars.php?error='$em'");
+
+                header("Location: ../admin/add_car.php?error='Cannot upload files of this type'");
             }
         }
     } else {
-        $em = "unknown error occurred";
-        header("Location: ../admin/cars.php?error='$em'");
+
+        header("Location: ../admin/add_car.php?error='unknown error occurred'");
     }
 } else {
-    $em = "Image not uploaded";
-    header("Location: ../admin/cars.php?error='$em'");
+    header("Location: ../admin/cars.php?error='Image not uploaded'");
 }
